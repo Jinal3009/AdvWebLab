@@ -1,0 +1,11 @@
+var http = require('http');
+http.createServer(function(req, res) {
+    res.write('<h1>Hello World!</h1>');
+    res.write('<p>This is my first Node.js server.</p>');
+    res.write('<p>Enjoy coding with Node.js!</p>');
+    res.write('<h2>Why Node.js?</h2>');
+    res.write('<ul><li>Fast</li><li>Scalable</li><li>Event-driven</li></ul>'); 
+
+    res.end();
+}
+).listen(8080);
