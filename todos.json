@@ -1,0 +1,10 @@
+[
+  {
+    "todo": "sleep",
+    "status": "✔️"
+  },
+  {
+    "todo": "MAke a new task",
+    "status": "❌"
+  }
+]
