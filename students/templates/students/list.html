@@ -1,0 +1,30 @@
+{% extends 'students/base.html' %}
+{% block title %}Students{% endblock %}
+{% block content %}
+<h4>All Students</h4>
+<table class="table table-bordered table-hover mt-3">
+    <thead class="table-primary">
+        <tr>
+            <th>#</th><th>Name</th><th>Roll No</th><th>Email</th><th>Branch</th><th>Year</th><th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for s in students %}
+        <tr>
+            <td>{{ forloop.counter }}</td>
+            <td>{{ s.name }}</td>
+            <td>{{ s.roll_no }}</td>
+            <td>{{ s.email }}</td>
+            <td>{{ s.branch }}</td>
+            <td>{{ s.year }}</td>
+            <td>
+                <a href="{% url 'student_edit' s.pk %}" class="btn btn-sm btn-warning">Edit</a>
+                <a href="{% url 'student_delete' s.pk %}" class="btn btn-sm btn-danger">Delete</a>
+            </td>
+        </tr>
+        {% empty %}
+        <tr><td colspan="7" class="text-center">No students found.</td></tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
